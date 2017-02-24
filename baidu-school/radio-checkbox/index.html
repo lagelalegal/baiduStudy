@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>自定义checkbox，radio样式</title>
+    <style type="text/css">
+        .radio-container div, .checkbox-container div, .element-radio div, .element-checkbox div {
+            line-height: 25px;
+        }
+
+        /* 使用伪类实现 radio */
+        .radio-container div label {
+            background-image: url('images/radio.png');
+            display: inline-block;
+            cursor: pointer;
+            background-repeat: no-repeat;
+            width: 55px;
+            height: 25px;
+            padding-left: 1.5em;
+            background-position: 1px -6px;
+        }
+
+        .radio-container div input[type=radio]:checked ~ label {
+            background-position: -80px -6px;
+        }
+
+        .radio-container div input[type=radio] {
+            display: none;
+        }
+        /* 使用伪类实现 radio 结束*/
+
+        /* 使用伪类实现 checkbox 开始 */
+        .checkbox-container div label {
+            background-image: url('images/radio.png');
+            display: inline-block;
+            cursor: pointer;
+            background-repeat: no-repeat;
+            width: 55px;
+            height: 25px;
+            padding-left: 1.5em;
+            background-position: 1px -28px;
+        }
+        .checkbox-container div input[type=checkbox]:checked ~ label {
+            background-position: -80px -28px;
+        }
+        .checkbox-container div input[type=checkbox] {
+            display: none;
+        }
+        /* 使用伪类实现 checkbox 结束 */
+
+        /* 伪元素实现 radio 开始*/
+        .element-radio div input[type=radio] {
+            display: none;
+        }
+        .element-radio div label::before {
+            content: '';
+            display: inline-block;
+            background-image: url('images/radio.png');
+            cursor: pointer;
+            background-repeat: no-repeat;
+            width: 30px;
+            height: 20px;
+            position: relative;
+            top: 3px;
+            background-position: 1px -6px;
+        }
+        .element-radio div input[type=radio]:checked ~ label::before {
+            background-position: -80px -6px;
+        }
+        /* 伪元素实现 radio 结束*/
+
+        /* 伪元素实现 checkbox 开始*/
+        .element-checkbox div input[type=checkbox] {
+            display: none;
+        }
+        .element-checkbox div label::before {
+            content: '';
+            display: inline-block;
+            background-image: url('images/radio.png');
+            cursor: pointer;
+            background-repeat: no-repeat;
+            width: 30px;
+            height: 20px;
+            position: relative;
+            top: 3px;
+            background-position: 1px -6px;
+        }
+        .element-checkbox div input[type=checkbox]:checked ~ label::before {
+            background-position: -80px -6px;
+        }
+        /* 伪元素实现 checkbox 结束*/
+    </style>
+</head>
+<body>
+    <h2>自定义 radio 样式</h2>
+    <div class="radio-container">
+        您的性别是：
+        <div>
+            <input id="male" type="radio" name="gender" value="male">
+            <label for="male">男</label>
+        </div>
+        <div>
+            <input id="female" type="radio" name="gender" value="female">
+            <label for="female">女</label>
+        </div>
+        <div>
+            <input id="other" type="radio" name="gender" value="other">
+            <label for="other">保密</label>
+        </div>
+    </div>
+
+    <h2>自定义 checkbox 样式</h2>
+    <div class="checkbox-container">
+        你的爱好有以下哪些：
+        <div>
+            <input type="checkbox" name="hobbies" id="java">
+            <label for="java">Java</label>
+        </div>
+        <div>
+            <input type="checkbox" name="hobbies" id="c++">
+            <label for="c++">C++</label>
+        </div>
+        <div>
+            <input type="checkbox" name="hobbies" id="html">
+            <label for="html">HTML</label>
+        </div>
+        <div>
+            <input type="checkbox" name="hobbies" id="javascript">
+            <label for="javascript">JavaScript</label>
+        </div>
+    </div>
+
+    <hr>
+
+    <h2>伪元素实现 radio 样式</h2>
+    <div class="element-radio">
+        您的性别是：
+        <div>
+            <input id="male1" type="radio" name="gender" value="male">
+            <label for="male1">男</label>
+        </div>
+        <div>
+            <input id="female1" type="radio" name="gender" value="female">
+            <label for="female1">女</label>
+        </div>
+        <div>
+            <input id="other1" type="radio" name="gender" value="other">
+            <label for="other1">保密</label>
+        </div>
+    </div>
+
+    <h2>伪元素实现 checkbox 样式</h2>
+    <div class="checkbox-container">
+        你的爱好有以下哪些：
+        <div>
+            <input type="checkbox" name="hobbies" id="java1">
+            <label for="java1">Java</label>
+        </div>
+        <div>
+            <input type="checkbox" name="hobbies" id="c++1">
+            <label for="c++1">C++</label>
+        </div>
+        <div>
+            <input type="checkbox" name="hobbies" id="html1">
+            <label for="html1">HTML</label>
+        </div>
+        <div>
+            <input type="checkbox" name="hobbies" id="javascript1">
+            <label for="javascript1">JavaScript</label>
+        </div>
+    </div>
+</body>
+</html>
